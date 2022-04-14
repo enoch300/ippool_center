@@ -19,5 +19,10 @@ func Store(p peer.Peer) (err error) {
 		return
 	}
 
+	err = redis.RDB.HSet(ctx, "machine_ipip", p.Format2Mid(), p.Format2ProvinceIsp()).Err()
+	if err != nil {
+		return
+	}
+
 	return
 }

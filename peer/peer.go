@@ -27,6 +27,10 @@ func (p *Peer) Format2MidInIpInPort() string {
 	return fmt.Sprintf("%s_%s_%s", p.MachineId, p.InnerIp, p.InnerPort)
 }
 
+func (p *Peer) Format2ProvinceIsp() string {
+	return fmt.Sprintf("%s_%s", p.Province, p.Isp)
+}
+
 func (p *Peer) Format2AppIdInIpInPort() string {
 	return fmt.Sprintf("%s_%s_%s", p.AppId, p.InnerIp, p.InnerPort)
 }
