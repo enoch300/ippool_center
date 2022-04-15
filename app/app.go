@@ -3,6 +3,7 @@ package app
 import (
 	"fmt"
 	"ippool_center/app/udp"
+	"ippool_center/cleartool"
 	"ippool_center/db/redis"
 	"ippool_center/utils/log"
 )
@@ -13,5 +14,6 @@ func Run() {
 		log.GlobalLog.Errorf("Redis connect %v", err)
 		return
 	}
+	go cleartool.Run()
 	udp.Listen()
 }
