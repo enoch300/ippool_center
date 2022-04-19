@@ -30,7 +30,7 @@ func handleConn(conn *net.UDPAddr, msg []byte) {
 	err := redis.Store(p)
 	if err != nil {
 		GlobalLog.Errorf("Redis [INSERRT] hash: %s, key: %s, value: %s, %v",
-			p.Format2NetAppIdProvinceIsp(),
+			p.Format2NetAppidProvinceIsp(),
 			p.Format2MidInIpInPort(),
 			p.Format2OutIpOutPort(),
 			err)
@@ -38,7 +38,7 @@ func handleConn(conn *net.UDPAddr, msg []byte) {
 	}
 
 	GlobalLog.Infof("Redis [INSERRT] hash: %s, key: %s, value: %s",
-		p.Format2NetAppIdProvinceIsp(),
+		p.Format2NetAppidProvinceIsp(),
 		p.Format2MidInIpInPort(),
 		p.Format2OutIpOutPort(),
 	)

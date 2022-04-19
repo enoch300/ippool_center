@@ -38,7 +38,7 @@ func Run() {
 	}()
 
 	for {
-		keys, err := redis.RDB.Keys(ctx, "*_*_*_*").Result()
+		keys, err := redis.RDB.Keys(ctx, "*_*_*").Result()
 		if err != nil {
 			GlobalLog.Errorf("[cleartool] >>> %s", err)
 			time.Sleep(5 * time.Second)

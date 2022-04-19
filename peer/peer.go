@@ -15,12 +15,16 @@ type Peer struct {
 	OuterPort int
 }
 
-func (p *Peer) Format2NetAppIdProvinceIsp() string {
+func (p *Peer) Format2NetAppidProvinceIsp() string {
 	return fmt.Sprintf("%s_%s_%s_%s", p.Network, p.AppId, p.Province, p.Isp)
 }
 
 func (p *Peer) Format2Mid() string {
 	return p.MachineId
+}
+
+func (p *Peer) Format2NetAppidIsp() string {
+	return fmt.Sprintf("%s_%s_%s", p.Network, p.AppId, p.Isp)
 }
 
 func (p *Peer) Format2MidInIpInPort() string {
@@ -31,7 +35,7 @@ func (p *Peer) Format2ProvinceIsp() string {
 	return fmt.Sprintf("%s_%s", p.Province, p.Isp)
 }
 
-func (p *Peer) Format2AppIdInIpInPort() string {
+func (p *Peer) Format2AppidInIpInPort() string {
 	return fmt.Sprintf("%s_%s_%s", p.AppId, p.InnerIp, p.InnerPort)
 }
 
